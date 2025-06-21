@@ -23,10 +23,6 @@ const Functions = () => {
     {
       title: "Composite Weather Index",
       description: "Combined membership functions integrating multiple weather parameters for comprehensive climate assessment."
-    },
-    {
-      title: "Seasonal Variation Functions",
-      description: "Time-dependent membership functions capturing seasonal patterns and long-term climate trends."
     }
   ];
 
@@ -55,43 +51,40 @@ const Functions = () => {
 
         {/* Functions Grid - One per row */}
         <div className="space-y-8">
-          {functionTypes.map((func, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
-              <div className="flex flex-col lg:flex-row">
-                {/* Image */}
-                <div className="lg:w-1/2">
-                  <img 
-                    src={`https://images.pexels.com/photos/${[
-                      '8386440', // Mathematical functions
-                      '8386434', // Data analysis
-                      '8386435', // Scientific graphs
-                      '8386436', // Mathematical visualization
-                      '8386437', // Function plots
-                      '8386438'  // Statistical charts
-                    ][index]}/pexels-photo-${[
-                      '8386440', '8386434', '8386435', '8386436', '8386437', '8386438'
-                    ][index]}.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop`}
-                    alt={func.title}
-                    className="w-full h-64 lg:h-full object-cover"
-                  />
-                </div>
-                
-                {/* Content */}
-                <div className="lg:w-1/2 p-8 flex flex-col justify-center">
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                    {func.title}
-                  </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    {func.description}
-                  </p>
-                  <button className="flex items-center text-emerald-600 hover:text-emerald-800 transition-colors font-medium">
-                    <Download className="w-5 h-5 mr-2" />
-                    Download Plot
-                  </button>
+          {functionTypes.map((func, index) => {
+            // Map images: 0 -> temprature.png, 1 -> rainfall.png, 2 -> pressure.png, 3 -> windspeed.png, 4 -> change.png
+            const functionImages = [
+              '/functions/temprature.png',
+              '/functions/rainfall.png',
+              '/functions/pressure.png',
+              '/functions/windspeed.png',
+              '/functions/change.png'
+            ];
+            const imgSrc = functionImages[index % functionImages.length];
+            return (
+              <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div className="flex flex-col lg:flex-row">
+                  {/* Image */}
+                  <div className="lg:w-1/2">
+                    <img
+                      src={imgSrc}
+                      alt={func.title}
+                      className="w-full h-64 lg:h-full object-cover"
+                    />
+                  </div>
+                  {/* Content */}
+                  <div className="lg:w-1/2 p-8 flex flex-col justify-center">
+                    <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+                      {func.title}
+                    </h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">
+                      {func.description}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

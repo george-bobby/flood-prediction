@@ -27,6 +27,14 @@ const Results = () => {
     {
       title: "Prediction Accuracy Analysis",
       description: "Detailed analysis of prediction accuracy for various climate parameters and time horizons."
+    },
+    {
+      title: "Model Validation Results",
+      description: "Cross-validation results and model performance metrics across different climate datasets."
+    },
+    {
+      title: "Prediction Accuracy Analysis",
+      description: "Detailed analysis of prediction accuracy for various climate parameters and time horizons."
     }
   ];
 
@@ -55,43 +63,41 @@ const Results = () => {
 
         {/* Results - One per row */}
         <div className="space-y-8">
-          {resultImages.map((result, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
-              <div className="flex flex-col lg:flex-row">
-                {/* Image */}
-                <div className="lg:w-1/2">
-                  <img 
-                    src={`https://images.pexels.com/photos/${[
-                      '590020', // Climate research
-                      '590021', // Environmental data
-                      '7947668', // Research results
-                      '7947669', // Scientific analysis
-                      '7947670', // Data visualization
-                      '7947671'  // Research findings
-                    ][index]}/pexels-photo-${[
-                      '590020', '590021', '7947668', '7947669', '7947670', '7947671'
-                    ][index]}.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop`}
-                    alt={result.title}
-                    className="w-full h-64 lg:h-full object-cover"
-                  />
-                </div>
-                
-                {/* Content */}
-                <div className="lg:w-1/2 p-8 flex flex-col justify-center">
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                    {result.title}
-                  </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    {result.description}
-                  </p>
-                  <button className="flex items-center text-blue-600 hover:text-blue-800 transition-colors font-medium">
-                    <Download className="w-5 h-5 mr-2" />
-                    Download High-Res
-                  </button>
+          {resultImages.map((result, index) => {
+            // Map images: 0 -> 1.png, 1 -> 2.png, ..., 5 -> 6.png
+            const resultImagesSrc = [
+              '/results/1.png',
+              '/results/2.png',
+              '/results/3.png',
+              '/results/4.png',
+              '/results/5.png',
+              '/results/6.png'
+            ];
+            const imgSrc = resultImagesSrc[index];
+            return (
+              <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div className="flex flex-col lg:flex-row">
+                  {/* Image */}
+                  <div className="lg:w-1/2">
+                    <img
+                      src={imgSrc}
+                      alt={result.title}
+                      className="w-full h-64 lg:h-full object-cover"
+                    />
+                  </div>
+                  {/* Content */}
+                  <div className="lg:w-1/2 p-8 flex flex-col justify-center">
+                    <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+                      {result.title}
+                    </h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">
+                      {result.description}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

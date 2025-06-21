@@ -5,36 +5,32 @@ import { ArrowLeft, Download } from 'lucide-react';
 const Results = () => {
   const resultImages = [
     {
-      title: "Climate Model Performance Comparison",
-      description: "Comparative analysis of different climate prediction models showing accuracy metrics and performance indicators."
+      title: "Test Case 4: Fuzzy Output (Defuzzified: 84.80)",
+      description: "Inputs: Temp=32°C, Wind=9 Bft, Atm=29.5 inHg, Rate=0.2 inHg/3h. Output: 84.80 mm/h (Very High). Expected: High. Match: X. This test case demonstrates a very high rainfall prediction with a centroid at 84.80, but the expected value was 'High', resulting in a mismatch."
     },
     {
-      title: "Regional Climate Impact Assessment",
-      description: "Geographic visualization of climate change impacts across different regions with severity mapping."
+      title: "Test Case 2: Fuzzy Output (Defuzzified: 13.33)",
+      description: "Inputs: Temp=18°C, Wind=3 Bft, Atm=30.5 inHg, Rate=0.01 inHg/3h. Output: 13.33 mm/h (Very Low). Expected: Low. Match: X. This test case shows a very low rainfall prediction, but the expected value was 'Low', resulting in a mismatch."
     },
     {
-      title: "Temporal Analysis Results",
-      description: "Time-series analysis showing climate trends over the past decades with future projections."
+      title: "Test Case 5: Fuzzy Output (Defuzzified: 85.94)",
+      description: "Inputs: Temp=38°C, Wind=12 Bft, Atm=28.5 inHg, Rate=0.9 inHg/3h. Output: 85.94 mm/h (Very High). Expected: Very High. Match: ✓. This test case demonstrates a very high rainfall prediction, matching the expected value."
     },
     {
-      title: "Statistical Significance Testing",
-      description: "Comprehensive statistical analysis results showing p-values and confidence intervals for climate predictions."
+      title: "Test Case 1: Fuzzy Output (Defuzzified: 13.33)",
+      description: "Inputs: Temp=5°C, Wind=1 Bft, Atm=31.5 inHg, Rate=0.002 inHg/3h. Output: 13.33 mm/h (Very Low). Expected: Very Low. Match: ✓. This test case shows a very low rainfall prediction, matching the expected value."
     },
     {
-      title: "Model Validation Results",
-      description: "Cross-validation results and model performance metrics across different climate datasets."
+      title: "Test Case 6: Fuzzy Output (Defuzzified: 13.33)",
+      description: "Inputs: Temp=15°C, Wind=0.5 Bft, Atm=30.2 inHg, Rate=0.001 inHg/3h. Output: 13.33 mm/h (Very Low). Expected: Very Low. Match: ✓. This test case demonstrates a very low rainfall prediction, matching the expected value."
     },
     {
-      title: "Prediction Accuracy Analysis",
-      description: "Detailed analysis of prediction accuracy for various climate parameters and time horizons."
+      title: "Test Case 3: Fuzzy Output (Defuzzified: 49.64)",
+      description: "Inputs: Temp=25°C, Wind=5 Bft, Atm=30.0 inHg, Rate=0.05 inHg/3h. Output: 49.64 mm/h (Normal). Expected: Normal. Match: ✓. This test case shows a normal rainfall prediction, matching the expected value."
     },
     {
-      title: "Model Validation Results",
-      description: "Cross-validation results and model performance metrics across different climate datasets."
-    },
-    {
-      title: "Prediction Accuracy Analysis",
-      description: "Detailed analysis of prediction accuracy for various climate parameters and time horizons."
+      title: "Test Case 7: Fuzzy Output (Defuzzified: 85.94)",
+      description: "Inputs: Temp=40°C, Wind=14 Bft, Atm=28.0 inHg, Rate=1.0 inHg/3h. Output: 85.94 mm/h (Very High). Expected: Very High. Match: ✓. This test case demonstrates a very high rainfall prediction, matching the expected value."
     }
   ];
 
@@ -64,14 +60,14 @@ const Results = () => {
         {/* Results - One per row */}
         <div className="space-y-8">
           {resultImages.map((result, index) => {
-            // Map images: 0 -> 1.png, 1 -> 2.png, ..., 5 -> 6.png
             const resultImagesSrc = [
               '/results/1.png',
               '/results/2.png',
               '/results/3.png',
               '/results/4.png',
               '/results/5.png',
-              '/results/6.png'
+              '/results/6.png',
+              '/results/7.png'
             ];
             const imgSrc = resultImagesSrc[index];
             return (

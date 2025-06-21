@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Download } from 'lucide-react';
 
@@ -43,42 +43,33 @@ const Accuracy = () => {
 
         {/* Accuracy Metrics - One per row */}
         <div className="space-y-8">
-          {accuracyMetrics.map((metric, index) => {
-            // Map images: 0 -> fuzzy.png, 1 -> hybrid.png, 2 -> neural.png
-            const accuracyImages = [
-              '/accuracy/fuzzy.png',
-              '/accuracy/hybrid.png',
-              '/accuracy/neural.png'
-            ];
-            const imgSrc = accuracyImages[index % accuracyImages.length];
-            return (
-              <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
-                <div className="flex flex-col lg:flex-row">
-                  {/* Image */}
-                  <div className="lg:w-1/2">
-                    <img
-                      src={imgSrc}
-                      alt={metric.title}
-                      className="w-full h-64 lg:h-full object-cover"
-                    />
-                  </div>
-                  {/* Content */}
-                  <div className="lg:w-1/2 p-8 flex flex-col justify-center">
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                      {metric.title}
-                    </h3>
-                    <p className="text-gray-600 mb-6 leading-relaxed">
-                      {metric.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+          {['/accuracy/fuzzy.png', '/accuracy/hybrid.png', '/accuracy/neural.png'].map((imgSrc, index) => (
+            <ImageCard key={index} src={imgSrc} alt={`Accuracy Graph ${index + 1}`} />
+          ))}
         </div>
       </div>
     </div>
   );
 };
+
+function ImageCard({ src, alt }: { src: string; alt: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 flex justify-center cursor-pointer" onClick={() => setOpen(true)}>
+        <img
+          src={src}
+          alt={alt}
+          style={{ maxWidth: '100%', height: 'auto', display: 'block' }}
+        />
+      </div>
+      {open && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90" onClick={() => setOpen(false)}>
+          <img src={src} alt={alt} style={{ maxHeight: '90vh', maxWidth: '90vw' }} />
+        </div>
+      )}
+    </>
+  );
+}
 
 export default Accuracy;

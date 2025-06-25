@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ExternalLink, BookOpen, Code, Github, BarChart3, Target, Zap, Leaf } from 'lucide-react';
+import { ExternalLink, BookOpen, Code, BarChart3, Target, Zap, Leaf, Pen } from 'lucide-react';
 
 const Home = () => {
   const researchPapers = [
@@ -58,12 +58,18 @@ const Home = () => {
     }
   ];
 
-  const githubLinks = [
+  const documentRefs = [
+    {
+      title: "Main Document",
+      description: "Detailed Explanation in Provided Template",
+      url: "https://docs.google.com/document/d/1eBcBO76EgvsltbO_8g0hvHL19E3s8ub4Nb_AL1hX0-8/edit?usp=sharing",
+      icon: <Pen className="w-5 h-5" />
+    },
     {
       title: "GitHub Repository",
       description: "Complete source code and additional resources",
       url: "https://github.com/george-bobby/fuzzynn-prediction",
-      icon: <Github className="w-5 h-5" />
+      icon: <Pen className="w-5 h-5" />
     }
   ];
 
@@ -140,6 +146,20 @@ const Home = () => {
           </p>
         </div>
 
+        {/* Document References */}
+        <div className="space-y-4 mb-12">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-6">Document References</h2>
+          {documentRefs.map((link, index) => (
+            <ExternalLinkCard
+              key={index}
+              link={link}
+              colorScheme="bg-white border-purple-200 hover:border-purple-400 hover:bg-purple-50"
+              iconBgColor="bg-purple-100"
+              iconTextColor="text-purple-600"
+            />
+          ))}
+        </div>
+
         {/* Research Paper References */}
         <div className="space-y-4 mb-12">
           <h2 className="text-2xl font-semibold text-gray-800 mb-6">Research Paper References</h2>
@@ -164,6 +184,20 @@ const Home = () => {
               colorScheme="bg-white border-emerald-200 hover:border-emerald-400 hover:bg-emerald-50"
               iconBgColor="bg-emerald-100"
               iconTextColor="text-emerald-600"
+            />
+          ))}
+        </div>
+
+        {/* SDG Links */}
+        <div className="space-y-4 mb-12">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-6">SDG Goals</h2>
+          {sdgRelations.map((link, index) => (
+            <ExternalLinkCard
+              key={index}
+              link={link}
+              colorScheme="bg-white border-red-200 hover:border-red-400 hover:bg-red-50"
+              iconBgColor="bg-red-100"
+              iconTextColor="text-red-600"
             />
           ))}
         </div>
@@ -196,34 +230,6 @@ const Home = () => {
                 </div>
               </div>
             </Link>
-          ))}
-        </div>
-
-        {/* GitHub Links */}
-        <div className="space-y-4 mb-12">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-6">GitHub Repository</h2>
-          {githubLinks.map((link, index) => (
-            <ExternalLinkCard
-              key={index}
-              link={link}
-              colorScheme="bg-white border-purple-200 hover:border-purple-400 hover:bg-purple-50"
-              iconBgColor="bg-purple-100"
-              iconTextColor="text-purple-600"
-            />
-          ))}
-        </div>
-
-        {/* SDG Links */}
-        <div className="space-y-4 mb-12">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-6">SDG Goals</h2>
-          {sdgRelations.map((link, index) => (
-            <ExternalLinkCard
-              key={index}
-              link={link}
-              colorScheme="bg-white border-red-200 hover:border-red-400 hover:bg-red-50"
-              iconBgColor="bg-red-100"
-              iconTextColor="text-red-600"
-            />
           ))}
         </div>
 

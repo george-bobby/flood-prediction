@@ -141,10 +141,10 @@ const Home = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Climate Research References
+            Flood Resilience Modelling with Fuzzy Neural Network
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Comprehensive collection of research papers, code implementations, and experimental results for climate data analysis and modeling.
+            George Bobby (2262067), Fenny Mary Saju (2262062)
           </p>
         </div>
 

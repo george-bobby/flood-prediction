@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ExternalLink, BookOpen, Code, BarChart3, Target, Zap, Leaf, Pen } from 'lucide-react';
 
 const Home = () => {
+
   const researchPapers = [
     {
       title: "Climate Risk Assessment Study",
@@ -16,6 +17,7 @@ const Home = () => {
       icon: <BookOpen className="w-5 h-5" />
     }
   ];
+
   const sdgRelations = [
     {
       title: "UN SDG Goal 3: Climate Action",

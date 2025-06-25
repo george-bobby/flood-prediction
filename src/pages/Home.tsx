@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ExternalLink, BookOpen, Code, Github, BarChart3, Target, Zap } from 'lucide-react';
+import { ExternalLink, BookOpen, Code, Github, BarChart3, Target, Zap, Leaf } from 'lucide-react';
 
 const Home = () => {
   const researchPapers = [
@@ -21,19 +21,19 @@ const Home = () => {
       title: "UN SDG Goal 3: Climate Action",
       description: "Ensure healthy lives and promote well-being for all at all ages",
       url: "https://sdgs.un.org/goals/goal3",
-      icon: <Target className="w-5 h-5" />
+      icon: <Leaf className="w-5 h-5" />
     },
     {
       title: "UN SDG Goal 4: Climate Action",
       description: "Ensure inclusive and equitable quality education and learning opportunities",
       url: "https://sdgs.un.org/goals/goal4",
-      icon: <Target className="w-5 h-5" />
+      icon: <Leaf className="w-5 h-5" />
     },
     {
       title: "UN SDG Goal 13: Climate Action",
       description: "Take urgent action to combat climate change and its impacts",
       url: "https://sdgs.un.org/goals/goal13",
-      icon: <Target className="w-5 h-5" />
+      icon: <Leaf className="w-5 h-5" />
     }
   ];
 
@@ -203,7 +203,7 @@ const Home = () => {
             <ExternalLinkCard
               key={index}
               link={link}
-              colorScheme="bg-white border-purple-200 hover:border-purple-400 hover:bg-purple-50"
+              colorScheme="bg-white border-red-200 hover:border-red-400 hover:bg-red-50"
             />
           ))}
         </div>
@@ -215,7 +215,7 @@ const Home = () => {
             <ExternalLinkCard
               key={index}
               link={link}
-              colorScheme="bg-white border-yellow-200 hover:border-yellow-400 hover:bg-yellow-50"
+              colorScheme="bg-white border-red-200 hover:border-red-400 hover:bg-red-50"
             />
           ))}
         </div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { ExternalLink, BookOpen, Code, Github, BarChart3, Target, Zap } from 'lucide-react';
 
@@ -15,10 +14,24 @@ const Home = () => {
       description: "Springer Article - Environmental Management",
       url: "https://link.springer.com/article/10.1007/s11069-018-3456-z",
       icon: <BookOpen className="w-5 h-5" />
+    }
+  ];
+  const sdgRelations = [
+    {
+      title: "UN SDG Goal 3: Climate Action",
+      description: "Ensure healthy lives and promote well-being for all at all ages",
+      url: "https://sdgs.un.org/goals/goal3",
+      icon: <Target className="w-5 h-5" />
+    },
+    {
+      title: "UN SDG Goal 4: Climate Action",
+      description: "Ensure inclusive and equitable quality education and learning opportunities",
+      url: "https://sdgs.un.org/goals/goal4",
+      icon: <Target className="w-5 h-5" />
     },
     {
       title: "UN SDG Goal 13: Climate Action",
-      description: "United Nations Sustainable Development Goals",
+      description: "Take urgent action to combat climate change and its impacts",
       url: "https://sdgs.un.org/goals/goal13",
       icon: <Target className="w-5 h-5" />
     }
@@ -36,14 +49,20 @@ const Home = () => {
       description: "Google Colab Notebook - Secondary Analysis",
       url: "https://colab.research.google.com/drive/1D145yB779D0m17odxyU0qtZIJwSzkpnD?usp=sharing",
       icon: <Code className="w-5 h-5" />
+    },
+    {
+      title: "Climate Data Analysis - Model 3",
+      description: "Google Colab Notebook - Tertiary Analysis",
+      url: "https://colab.research.google.com/drive/1sl2xWcVjpAbSL2-FSCRinq_UZ2Y6xA6b?usp=sharing",
+      icon: <Code className="w-5 h-5" />
     }
   ];
 
   const githubLinks = [
     {
-      title: "GitHub Profile",
+      title: "GitHub Repository",
       description: "Complete source code and additional resources",
-      url: "https://github.com/george-bobby/",
+      url: "https://github.com/george-bobby/fuzzynn-prediction",
       icon: <Github className="w-5 h-5" />
     }
   ];
@@ -69,7 +88,18 @@ const Home = () => {
     }
   ];
 
-  const ExternalLinkCard = ({ link, colorScheme }) => (
+  // Define the type for ExternalLinkCard props
+  interface ExternalLinkCardProps {
+    link: {
+      title: string;
+      description: string;
+      url: string;
+      icon: JSX.Element;
+    };
+    colorScheme: string;
+  }
+
+  const ExternalLinkCard: React.FC<ExternalLinkCardProps> = ({ link, colorScheme }) => (
     <a
       href={link.url}
       target="_blank"
@@ -79,11 +109,10 @@ const Home = () => {
       <div className={`p-6 rounded-xl border-2 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg ${colorScheme}`}>
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <div className={`p-3 rounded-lg ${
-              colorScheme.includes('blue') ? 'bg-blue-100 text-blue-600' : 
+            <div className={`p-3 rounded-lg ${colorScheme.includes('blue') ? 'bg-blue-100 text-blue-600' :
               colorScheme.includes('emerald') ? 'bg-emerald-100 text-emerald-600' :
-              'bg-purple-100 text-purple-600'
-            }`}>
+                'bg-purple-100 text-purple-600'
+              }`}>
               {link.icon}
             </div>
             <div>
@@ -116,9 +145,9 @@ const Home = () => {
         <div className="space-y-4 mb-12">
           <h2 className="text-2xl font-semibold text-gray-800 mb-6">Research Paper References</h2>
           {researchPapers.map((link, index) => (
-            <ExternalLinkCard 
-              key={index} 
-              link={link} 
+            <ExternalLinkCard
+              key={index}
+              link={link}
               colorScheme="bg-white border-blue-200 hover:border-blue-400 hover:bg-blue-50"
             />
           ))}
@@ -128,22 +157,10 @@ const Home = () => {
         <div className="space-y-4 mb-12">
           <h2 className="text-2xl font-semibold text-gray-800 mb-6">Google Colab Notebooks</h2>
           {colabLinks.map((link, index) => (
-            <ExternalLinkCard 
-              key={index} 
-              link={link} 
+            <ExternalLinkCard
+              key={index}
+              link={link}
               colorScheme="bg-white border-emerald-200 hover:border-emerald-400 hover:bg-emerald-50"
-            />
-          ))}
-        </div>
-
-        {/* GitHub Links */}
-        <div className="space-y-4 mb-12">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-6">GitHub Repository</h2>
-          {githubLinks.map((link, index) => (
-            <ExternalLinkCard 
-              key={index} 
-              link={link} 
-              colorScheme="bg-white border-purple-200 hover:border-purple-400 hover:bg-purple-50"
             />
           ))}
         </div>
@@ -176,6 +193,30 @@ const Home = () => {
                 </div>
               </div>
             </Link>
+          ))}
+        </div>
+
+        {/* GitHub Links */}
+        <div className="space-y-4 mb-12">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-6">GitHub Repository</h2>
+          {githubLinks.map((link, index) => (
+            <ExternalLinkCard
+              key={index}
+              link={link}
+              colorScheme="bg-white border-purple-200 hover:border-purple-400 hover:bg-purple-50"
+            />
+          ))}
+        </div>
+
+        {/* SDG Links */}
+        <div className="space-y-4 mb-12">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-6">SDG Goals</h2>
+          {sdgRelations.map((link, index) => (
+            <ExternalLinkCard
+              key={index}
+              link={link}
+              colorScheme="bg-white border-yellow-200 hover:border-yellow-400 hover:bg-yellow-50"
+            />
           ))}
         </div>
 

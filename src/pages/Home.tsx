@@ -97,9 +97,11 @@ const Home = () => {
       icon: JSX.Element;
     };
     colorScheme: string;
+    iconBgColor: string;
+    iconTextColor: string;
   }
 
-  const ExternalLinkCard: React.FC<ExternalLinkCardProps> = ({ link, colorScheme }) => (
+  const ExternalLinkCard: React.FC<ExternalLinkCardProps> = ({ link, colorScheme, iconBgColor, iconTextColor }) => (
     <a
       href={link.url}
       target="_blank"
@@ -109,10 +111,7 @@ const Home = () => {
       <div className={`p-6 rounded-xl border-2 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg ${colorScheme}`}>
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <div className={`p-3 rounded-lg ${colorScheme.includes('blue') ? 'bg-blue-100 text-blue-600' :
-              colorScheme.includes('emerald') ? 'bg-emerald-100 text-emerald-600' :
-                'bg-purple-100 text-purple-600'
-              }`}>
+            <div className={`p-3 rounded-lg ${iconBgColor} ${iconTextColor}`}>
               {link.icon}
             </div>
             <div>
@@ -149,6 +148,8 @@ const Home = () => {
               key={index}
               link={link}
               colorScheme="bg-white border-blue-200 hover:border-blue-400 hover:bg-blue-50"
+              iconBgColor="bg-blue-100"
+              iconTextColor="text-blue-600"
             />
           ))}
         </div>
@@ -161,6 +162,8 @@ const Home = () => {
               key={index}
               link={link}
               colorScheme="bg-white border-emerald-200 hover:border-emerald-400 hover:bg-emerald-50"
+              iconBgColor="bg-emerald-100"
+              iconTextColor="text-emerald-600"
             />
           ))}
         </div>
@@ -203,7 +206,9 @@ const Home = () => {
             <ExternalLinkCard
               key={index}
               link={link}
-              colorScheme="bg-white border-red-200 hover:border-red-400 hover:bg-red-50"
+              colorScheme="bg-white border-purple-200 hover:border-purple-400 hover:bg-purple-50"
+              iconBgColor="bg-purple-100"
+              iconTextColor="text-purple-600"
             />
           ))}
         </div>
@@ -216,6 +221,8 @@ const Home = () => {
               key={index}
               link={link}
               colorScheme="bg-white border-red-200 hover:border-red-400 hover:bg-red-50"
+              iconBgColor="bg-red-100"
+              iconTextColor="text-red-600"
             />
           ))}
         </div>

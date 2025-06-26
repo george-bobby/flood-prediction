@@ -77,7 +77,7 @@ const Home = () => {
       title: "Flood Prediction Dataset",
       description: "View the Dataset in Excel",
       url: "https://docs.google.com/spreadsheets/d/12ZAG4FZQ3mhs0HELGTuAi6tEoJ-a6iS5/edit?usp=sharing&ouid=113456777960904974002&rtpof=true&sd=true",
-      icon: <BookOpen className="w-5 h-5" />
+      icon: <Pen className="w-5 h-5" />
     }
   ];
 

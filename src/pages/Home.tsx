@@ -15,18 +15,6 @@ const Home = () => {
       description: "Springer Article - Environmental Management",
       url: "https://link.springer.com/article/10.1007/s11069-018-3456-z",
       icon: <BookOpen className="w-5 h-5" />
-    },
-    {
-      title: "Reuters - Global and Ethical Considerations",
-      description: "AI Enhances Flood Warnings but cannot Erase Risk of Disaster",
-      url: "https://www.reuters.com/technology/artificial-intelligence/ai-enhances-flood-warnings-cannot-erase-risk-disaster-2024-10-15/",
-      icon: <BookOpen className="w-5 h-5" />
-    },
-    {
-      title: "Prism Sustanability Frameworks for Flood Prediction",
-      description: "Ethical Frameworks for AI Flood Prediction",
-      url: "https://prism.sustainability-directory.com/scenario/ethical-frameworks-for-ai-flood-prediction/",
-      icon: <BookOpen className="w-5 h-5" />
     }
   ];
 

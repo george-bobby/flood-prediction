@@ -93,12 +93,6 @@ const Home = () => {
       description: "Research findings and experimental results",
       path: "/results",
       icon: <Target className="w-5 h-5" />
-    },
-    {
-      title: "Flood Prediction Dataset",
-      description: "View the Dataset in Excel",
-      url: "https://docs.google.com/spreadsheets/d/12ZAG4FZQ3mhs0HELGTuAi6tEoJ-a6iS5/edit?usp=sharing&ouid=113456777960904974002&rtpof=true&sd=true",
-      icon: <Target className="w-5 h-5" />
     }
   ];
 

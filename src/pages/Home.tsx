@@ -74,7 +74,7 @@ const Home = () => {
 
   const documentRefs = [
     {
-      title: "Google Docs Link for Main Document",
+      title: "Google Docs Link",
       description: "Detailed Explanation in Provided Template",
       url: "https://docs.google.com/document/d/1eBcBO76EgvsltbO_8g0hvHL19E3s8ub4Nb_AL1hX0-8/edit?usp=sharing",
       icon: <Pen className="w-5 h-5" />
@@ -83,12 +83,6 @@ const Home = () => {
       title: "GitHub Repository",
       description: "Complete source code and additional resources",
       url: "https://github.com/george-bobby/fuzzynn-prediction",
-      icon: <Pen className="w-5 h-5" />
-    },
-    {
-      title: "Flood Prediction Dataset",
-      description: "View the Dataset in Excel",
-      url: "https://docs.google.com/spreadsheets/d/12ZAG4FZQ3mhs0HELGTuAi6tEoJ-a6iS5/edit?usp=sharing&ouid=113456777960904974002&rtpof=true&sd=true",
       icon: <Pen className="w-5 h-5" />
     }
   ];
@@ -110,6 +104,12 @@ const Home = () => {
       title: "Results",
       description: "Research findings and experimental results",
       path: "/results",
+      icon: <Target className="w-5 h-5" />
+    },
+    {
+      title: "Flood Prediction Dataset",
+      description: "View the Dataset in Excel",
+      url: "https://docs.google.com/spreadsheets/d/12ZAG4FZQ3mhs0HELGTuAi6tEoJ-a6iS5/edit?usp=sharing&ouid=113456777960904974002&rtpof=true&sd=true",
       icon: <Target className="w-5 h-5" />
     }
   ];

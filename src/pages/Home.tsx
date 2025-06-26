@@ -41,13 +41,13 @@ const Home = () => {
 
   const colabLinks = [
     {
-      title: "Neural Network Flood Prediction",
+      title: "Fuzzy Logic Flood Prediction",
       description: "Google Colab Notebook - Primary Analysis",
       url: "https://colab.research.google.com/drive/1Y1xurUQHVsMB_hu0UpQeXFd8UPo8NNTo?usp=sharing",
       icon: <Code className="w-5 h-5" />
     },
     {
-      title: "Fuzzy Logic Flood Prediction",
+      title: "Neural Network Flood Prediction",
       description: "Google Colab Notebook - Secondary Analysis",
       url: "https://colab.research.google.com/drive/1D145yB779D0m17odxyU0qtZIJwSzkpnD?usp=sharing",
       icon: <Code className="w-5 h-5" />

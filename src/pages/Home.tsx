@@ -5,15 +5,27 @@ const Home = () => {
 
   const researchPapers = [
     {
-      title: "Climate Risk Assessment Study",
+      title: "Modelling hybrid and backpropagation adaptive neuro-fuzzy inference systems for flood forecasting",
       description: "Springer Article - Natural Hazards Research",
       url: "https://link.springer.com/article/10.1007/s11069-021-04694-w",
       icon: <BookOpen className="w-5 h-5" />
     },
     {
-      title: "Climate Adaptation Strategies",
+      title: "Investigation of neural network and fuzzy inference neural network and their optimization using meta-algorithms in river flood routing",
       description: "Springer Article - Environmental Management",
       url: "https://link.springer.com/article/10.1007/s11069-018-3456-z",
+      icon: <BookOpen className="w-5 h-5" />
+    },
+    {
+      title: "Reuters - Global and Ethical Considerations",
+      description: "AI Enhances Flood Warnings but cannot Erase Risk of Disaster",
+      url: "https://www.reuters.com/technology/artificial-intelligence/ai-enhances-flood-warnings-cannot-erase-risk-disaster-2024-10-15/",
+      icon: <BookOpen className="w-5 h-5" />
+    },
+    {
+      title: "Prism Sustanability Frameworks for Flood Prediction",
+      description: "Ethical Frameworks for AI Flood Prediction",
+      url: "https://prism.sustainability-directory.com/scenario/ethical-frameworks-for-ai-flood-prediction/",
       icon: <BookOpen className="w-5 h-5" />
     }
   ];
@@ -41,19 +53,19 @@ const Home = () => {
 
   const colabLinks = [
     {
-      title: "Climate Data Analysis - Model 1",
+      title: "Neural Network Flood Prediction",
       description: "Google Colab Notebook - Primary Analysis",
       url: "https://colab.research.google.com/drive/1Y1xurUQHVsMB_hu0UpQeXFd8UPo8NNTo?usp=sharing",
       icon: <Code className="w-5 h-5" />
     },
     {
-      title: "Climate Data Analysis - Model 2",
+      title: "Fuzzy Logic Flood Prediction",
       description: "Google Colab Notebook - Secondary Analysis",
       url: "https://colab.research.google.com/drive/1D145yB779D0m17odxyU0qtZIJwSzkpnD?usp=sharing",
       icon: <Code className="w-5 h-5" />
     },
     {
-      title: "Climate Data Analysis - Model 3",
+      title: "Hybrid FNN Flood Prediction",
       description: "Google Colab Notebook - Tertiary Analysis",
       url: "https://colab.research.google.com/drive/1sl2xWcVjpAbSL2-FSCRinq_UZ2Y6xA6b?usp=sharing",
       icon: <Code className="w-5 h-5" />
@@ -62,7 +74,7 @@ const Home = () => {
 
   const documentRefs = [
     {
-      title: "Main Document",
+      title: "Google Docs Link for Main Document",
       description: "Detailed Explanation in Provided Template",
       url: "https://docs.google.com/document/d/1eBcBO76EgvsltbO_8g0hvHL19E3s8ub4Nb_AL1hX0-8/edit?usp=sharing",
       icon: <Pen className="w-5 h-5" />
@@ -170,7 +182,7 @@ const Home = () => {
 
         {/* Research Paper References */}
         <div className="space-y-4 mb-12">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-6">Research Paper References</h2>
+          <h2 className="text-2xl font-semibold text-gray-800 mb-6">Research Papers and References</h2>
           {researchPapers.map((link, index) => (
             <ExternalLinkCard
               key={index}

@@ -68,9 +68,15 @@ const Home = () => {
       icon: <Pen className="w-5 h-5" />
     },
     {
-      title: "GitHub Repository",
+      title: "GitHub Repository - 1",
       description: "Complete source code and additional resources",
       url: "https://github.com/george-bobby/fuzzynn-prediction",
+      icon: <Pen className="w-5 h-5" />
+    },
+    {
+      title: "GitHub Repository - 2",
+      description: "Complete source code we took reference from",
+      url: "https://github.com/meiyihTan/Fuzzy-Logic-System",
       icon: <Pen className="w-5 h-5" />
     }
   ];

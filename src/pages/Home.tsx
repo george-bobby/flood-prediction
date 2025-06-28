@@ -150,7 +150,7 @@ const Home = () => {
             Flood Resilience Modelling with Fuzzy Neural Network
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            George Bobby (2262067), Fenny Mary Saju (2262062)
+            George Bobby (2262067), Fenny Mary Saju (2262067)
           </p>
         </div>
 
